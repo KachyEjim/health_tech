@@ -6,7 +6,7 @@ A simple CRUD application built with **Next.js**, **TypeScript**, **Prisma ORM**
 
 - [Overview](#overview)
 - [Features](#features)
-- [Tech Stack](#tech-stack)
+- [Tech Stack](#tech-stack-%EF%B8%8F)
 - [Architecture](#architecture)
 - [Setup Instructions](#setup-instructions)
 - [Running the Application](#running-the-application)
