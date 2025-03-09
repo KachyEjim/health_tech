@@ -1,5 +1,15 @@
 # Diagnostic Test Results Manager 🚀
 
+## Personal Motivation
+
+As someone who has seen firsthand the inefficiencies in patient health files storage, I'm deeply committed to enhancing health information systems in Nigeria. I have actively engaged in projects aimed at improving the efficiency and security of patient data management. During my time at ALX Africa, I worked on projects that align with this goal:
+
+- **[Connected Care](https://github.com/KachyEjim/Connected_Care)**: A health information management system designed to streamline the secure storage, exchange, and retrieval of medical information, ensuring data availability while maintaining strict security protocols.
+
+- **[MyHealth Vault](https://github.com/KachyEjim/alx-myhealth-vault-final-project)**: A modern API solution for securely storing, accessing, and managing personal health records, catering to both patients and healthcare providers seeking efficient data management.
+
+These projects underscore my dedication to advancing healthcare technology and my alignment with the objectives of Ngoane Health Tech. I am confident that my experience and commitment to improving health information systems make me a strong fit for this position.
+
 A simple CRUD application built with **Next.js**, **TypeScript**, **Prisma ORM**, and **PostgreSQL** to manage diagnostic test results for medical laboratories.
 
 ## Table of Contents
@@ -219,12 +229,11 @@ Then open your browser and navigate to http://localhost:3000.
 └── tsconfig.json                   # TypeScript configuration file.
 
 ```
+
 ## Contact 📧
 
 For questions or suggestions, please contact:
 
 **Name:** Onyedikachi Ejim
 
-
 **Email:** Ejimovc@gmail.com
-
