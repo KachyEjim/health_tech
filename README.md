@@ -219,11 +219,11 @@ Then open your browser and navigate to http://localhost:3000.
 ├── tailwind.config.js              # Tailwind CSS configuration file.
 └── tsconfig.json                   # TypeScript configuration file.
 
-
+```
 ## Contact 📧
 
 For questions or suggestions, please contact:
 
 Name: Onyedikachi Ejim
 Email: Ejimovc@gmail.com
-```
+
