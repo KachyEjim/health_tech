@@ -4,16 +4,16 @@ A simple CRUD application built with **Next.js**, **TypeScript**, **Prisma ORM**
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
+- [Overview](#overview-)
+- [Features](#features-)
 - [Tech Stack](#tech-stack-%EF%B8%8F)
-- [Architecture](#architecture)
-- [Setup Instructions](#setup-instructions)
-- [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
-- [Directory Structure](#directory-structure)
-- [License](#license)
-- [Contact](#contact)
+- [Architecture](#architecture-)
+- [Setup Instructions](#setup-instructions-)
+- [Running the Application](#running-the-application-)
+- [API Endpoints](#api-endpoints-)
+- [Directory Structure](#directory-structure-)
+- [License](#license-)
+- [Contact](#contact-)
 
 ## Overview 📚
 
