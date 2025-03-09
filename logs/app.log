@@ -1,0 +1,781 @@
+2025-03-07T00:01:25.377Z [error]: Error processing form data: PrismaClientValidationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.create()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__3e7668e7._.js:437:195
+
+  434 // Validate data
+  435 const validatedData = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$utils$2f$validation$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["diagnosticTestSchema"].parse(testData);
+  436 // Save to database
+→ 437 const test = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.create({
+        data: {
+          patientName: "onyedikachi",
+          testType: "X-Ray",
+          result: {
+            value: "wwwww",
+            files: [
+              "/uploads/1741305685317-Screenshot_from_2024-12-07_19-55-11.png",
+              "/uploads/1741305685320-3.5kva.docx"
+            ]
+          },
+          testDate: "2025-03-01",
+                    ~~~~~~~~~~~~
+          notes: "wwww"
+        }
+      })
+
+Invalid value for argument `testDate`: premature end of input. Expected ISO-8601 DateTime.
+2025-03-07T07:52:04.071Z [info]: Test result 90acd93b-df90-4ccd-a3cf-652dfdf30f62 updated successfully
+2025-03-07T08:24:48.312Z [info]: Test result e9218458-c19a-42e6-8570-e8e965946132 deleted successfully
+2025-03-07T08:24:54.381Z [info]: Test result a45967bd-7782-48a0-8d8b-c6ee8a347061 deleted successfully
+2025-03-07T08:25:10.867Z [info]: Test result 90acd93b-df90-4ccd-a3cf-652dfdf30f62 updated successfully
+2025-03-07T09:43:05.972Z [info]: Test result 94796182-2df2-496f-ae91-48418b2902fc deleted successfully
+2025-03-07T09:43:08.965Z [info]: Test result 90acd93b-df90-4ccd-a3cf-652dfdf30f62 deleted successfully
+2025-03-07T09:44:45.900Z [info]: Test result e50f66aa-1085-49d1-b76c-f73051aba819 deleted successfully
+2025-03-07T10:55:20.606Z [info]: Test result 136b9fbe-0f3c-4004-a603-f58cf97cdc1c deleted successfully
+2025-03-07T10:55:57.490Z [info]: Test result b59e42f9-6627-430f-8e5b-36472bbd7ede updated successfully
+2025-03-07T11:14:10.796Z [info]: Test result b59e42f9-6627-430f-8e5b-36472bbd7ede deleted successfully
+2025-03-07T11:14:19.306Z [info]: Test result 42e701c0-3f0e-44a9-b441-df8dc4054f28 deleted successfully
+2025-03-07T11:14:37.752Z [info]: Test result 1cb934e6-a87d-45b6-a0ad-e31e069e0b60 deleted successfully
+2025-03-07T20:34:03.664Z [info]: Test result 11d85de8-2740-489e-8e9f-2c55ba370ca5 deleted successfully
+2025-03-08T15:21:40.016Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  }
+]
+2025-03-08T15:28:54.528Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  }
+]
+2025-03-08T15:31:59.320Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:35:24.940Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:35:43.934Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:37:43.183Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:38:16.041Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:53:05.336Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:54:22.647Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:55:40.355Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T15:57:08.048Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T16:00:06.875Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T16:01:25.776Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T16:01:42.890Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T16:01:43.915Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T16:01:44.601Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T16:01:47.196Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T16:02:52.670Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  }
+]
+2025-03-08T19:18:25.202Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T19:21:04.450Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T19:21:16.369Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Test type must be at least 3 characters",
+    "path": [
+      "testType"
+    ]
+  }
+]
+2025-03-08T19:21:25.760Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  }
+]
+2025-03-08T19:24:12.321Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  }
+]
+2025-03-08T19:24:34.030Z [error]: Error processing form data: [
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Patient name must be at least 3 characters",
+    "path": [
+      "patientName"
+    ]
+  }
+]
+2025-03-08T21:13:30.044Z [error]: Error creating user: [
+  {
+    "code": "invalid_date",
+    "path": [
+      "dateOfBirth"
+    ],
+    "message": "Invalid date"
+  }
+]
+2025-03-09T06:21:46.399Z [error]: Error creating user: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].user.create()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__8add4a59._.js:275:177
+
+  272 try {
+  273     const body = await req.json();
+  274     const validatedData = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$utils$2f$validation$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["userSchema"].parse(body);
+→ 275     const user = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].user.create(
+Unique constraint failed on the fields: (`email`)
+2025-03-09T06:33:27.003Z [error]: Error creating user: SyntaxError: No number after minus sign in JSON at position 1
+2025-03-09T06:33:49.398Z [error]: Error creating user: SyntaxError: No number after minus sign in JSON at position 1
+2025-03-09T07:19:33.366Z [error]: Failed to delete file: /uploads/1741504551760-profileppbroifrsnyi.jpeg ENOENT: no such file or directory, access '/home/kachy/projects/health_tech/public/uploads/1741504551760-profileppbroifrsnyi.jpeg'
+2025-03-09T07:19:43.313Z [error]: Failed to delete file: hello ENOENT: no such file or directory, access '/home/kachy/projects/health_tech/public/uploads/hello'
+2025-03-09T09:36:14.323Z [error]: Failed to delete file: /uploads/1741512829901-Screenshot_from_2025-02-25_14-27-01.png ENOENT: no such file or directory, access '/home/kachy/projects/health_tech/public/uploads/1741512829901-Screenshot_from_2025-02-25_14-27-01.png'
+2025-03-09T09:39:42.111Z [error]: Failed to delete file: /uploads/1741512974378-Screenshot_from_2025-02-25_16-05-36.png ENOENT: no such file or directory, access '/home/kachy/projects/health_tech/public/uploads/1741512974378-Screenshot_from_2025-02-25_16-05-36.png'
+2025-03-09T09:41:26.733Z [error]: Failed to delete file: /uploads/1741513182114-VOTERSCARD_FRONT.jpeg ENOENT: no such file or directory, access '/home/kachy/projects/health_tech/public/uploads/1741513182114-VOTERSCARD_FRONT.jpeg'
+2025-03-09T14:10:23.221Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T14:20:53.647Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T14:25:13.951Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T14:31:38.500Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T14:45:31.834Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T14:46:45.652Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T18:04:23.440Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T18:04:58.425Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:423:188
+
+  420 }
+  421 async function GET() {
+  422     try {
+→ 423         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T18:11:19.536Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:428:188
+
+  425 }
+  426 async function GET() {
+  427     try {
+→ 428         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T18:11:32.069Z [error]: Error fetching test results: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:428:188
+
+  425 }
+  426 async function GET() {
+  427     try {
+→ 428         const tests = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.findMany(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T18:13:31.489Z [error]: Error processing form data: PrismaClientKnownRequestError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.create()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:367:195
+
+  364 // Validate data (ensure userId is part of the payload)
+  365 const validatedData = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$utils$2f$validation$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["diagnosticTestSchema"].parse(testData);
+  366 // Create the diagnostic test record with the linked userId
+→ 367 const test = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.create(
+The column `DiagnosticTest.userId` does not exist in the current database.
+2025-03-09T18:21:51.420Z [error]: Error creating test: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "patientName"
+    ],
+    "message": "Required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "testType"
+    ],
+    "message": "Required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "object",
+    "received": "undefined",
+    "path": [
+      "result"
+    ],
+    "message": "Required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "testDate"
+    ],
+    "message": "Required"
+  }
+]
+2025-03-09T18:24:29.964Z [error]: Error creating test: [
+  {
+    "code": "invalid_type",
+    "expected": "object",
+    "received": "string",
+    "path": [
+      "result"
+    ],
+    "message": "Expected object, received string"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "testDate"
+    ],
+    "message": "Required"
+  }
+]
+2025-03-09T18:25:05.972Z [error]: Error creating test: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "testDate"
+    ],
+    "message": "Required"
+  }
+]
+2025-03-09T18:25:43.366Z [error]: Error creating test: [
+  {
+    "code": "custom",
+    "message": "Invalid date format",
+    "path": [
+      "testDate"
+    ]
+  }
+]
+2025-03-09T18:26:43.996Z [error]: Error creating test: PrismaClientValidationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.create()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__d9b97aa2._.js:393:191
+
+  390 // Fallback for JSON requests
+  391 const body = await req.json();
+  392 const validatedData = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$utils$2f$validation$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["diagnosticTestSchema"].parse(body);
+→ 393 const test = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.create({
+        data: {
+          patientName: "memm",
+          testType: "killinh mer",
+          result: {
+            vallue: "ikekekekk"
+          },
+          testDate: "enough"
+                    ~~~~~~~~
+        }
+      })
+
+Invalid value for argument `testDate`: input contains invalid characters. Expected ISO-8601 DateTime.
+2025-03-09T18:33:41.390Z [info]: Test result e1d34c66-4fcc-43e0-9128-ea9be403af18 deleted successfully
+2025-03-09T18:37:25.475Z [info]: Test result 53eb4385-56da-40cb-909a-ccf29ef9804b deleted successfully
+2025-03-09T18:40:05.801Z [info]: Test result f07e2aba-5774-42b6-b100-274edcf63ea4 updated successfully
+2025-03-09T18:40:16.711Z [info]: Test result f07e2aba-5774-42b6-b100-274edcf63ea4 deleted successfully
+2025-03-09T18:52:46.998Z [info]: Test result 06ea7d3b-76a8-41cb-b6db-09c049b963ac updated successfully
+2025-03-09T18:55:22.527Z [info]: Test result 06ea7d3b-76a8-41cb-b6db-09c049b963ac updated successfully
+2025-03-09T18:55:30.390Z [info]: Test result 06ea7d3b-76a8-41cb-b6db-09c049b963ac updated successfully
+2025-03-09T18:57:50.573Z [error]: Error updating test result: PrismaClientValidationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.update()` invocation in
+/home/kachy/projects/health_tech/.next/server/chunks/[root of the server]__6b73cb85._.js:443:194
+
+  440     }
+  441 }
+  442 // Update the database
+→ 443 const updatedTest = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$api$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].diagnosticTest.update({
+        where: {
+          id: undefined,
+      ?   AND?: DiagnosticTestWhereInput | DiagnosticTestWhereInput[],
+      ?   OR?: DiagnosticTestWhereInput[],
+      ?   NOT?: DiagnosticTestWhereInput | DiagnosticTestWhereInput[],
+      ?   patientName?: StringFilter | String,
+      ?   testType?: StringFilter | String,
+      ?   result?: JsonFilter,
+      ?   testDate?: DateTimeFilter | DateTime,
+      ?   notes?: StringNullableFilter | String | Null,
+      ?   createdAt?: DateTimeFilter | DateTime,
+      ?   updatedAt?: DateTimeFilter | DateTime
+        },
+        data: {
+          patientName: "onyedikachi",
+          testType: "Thyroid Function",
+          result: {
+            value: "qqq"
+          },
+          testDate: "2025-03-09T00:00:00.000Z",
+          notes: "qqq"
+        }
+      })
+
+Argument `where` of type DiagnosticTestWhereUniqueInput needs at least one of `id` or `id` arguments. Available options are marked with ?.
+2025-03-09T18:58:30.632Z [info]: Test result 06ea7d3b-76a8-41cb-b6db-09c049b963ac updated successfully
+2025-03-09T18:58:57.342Z [info]: Test result 06ea7d3b-76a8-41cb-b6db-09c049b963ac updated successfully
+2025-03-09T19:02:55.211Z [info]: Test result 06ea7d3b-76a8-41cb-b6db-09c049b963ac updated successfully
+2025-03-09T19:04:12.873Z [info]: Test result 06ea7d3b-76a8-41cb-b6db-09c049b963ac deleted successfully
