@@ -1,4 +1,6 @@
-import { NextResponse } from 'next/server';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { NextRequest, NextResponse } from 'next/server';
 import { ZodError } from 'zod';
 import prisma from '../lib/prisma';
 import { saveFile } from '../utils/file_operation';
@@ -9,7 +11,7 @@ import { diagnosticTestSchema } from '../utils/validation';
 export const dynamic = 'force-dynamic';
 
 // Create a test result
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     const contentType = req.headers.get('content-type') || '';
 

@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from 'fs/promises';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import { ZodError } from 'zod';
 import prisma from '../../lib/prisma';
@@ -7,22 +8,22 @@ import { saveFile } from '../../utils/file_operation';
 import logger from '../../utils/logger';
 import { diagnosticTestSchema } from '../../utils/validation';
 
-// Essential for proper functioning with multipart/form-data in App Router
 export const dynamic = 'force-dynamic';
 
-// Get a single test result
+// GET a single test result
 export async function GET(
-  req: Request,
-  { params }: { params: { id: string } },
-) {
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+): Promise<NextResponse> {
   try {
+    const { id } = await params;
+
     const test = await prisma.diagnosticTest.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
-
-    if (!test)
+    if (!test) {
       return NextResponse.json({ error: 'Test not found' }, { status: 404 });
-
+    }
     return NextResponse.json(test);
   } catch (error) {
     logger.error(`Error fetching test result: ${error}`);
@@ -35,22 +36,20 @@ export async function GET(
 
 // Update a test result
 export async function PUT(
-  req: Request,
-  { params }: { params: { id: string } },
-) {
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+): Promise<NextResponse> {
   try {
-    const contentType = req.headers.get('content-type') || '';
+    const { id } = await params;
+    const contentType = request.headers.get('content-type') || '';
     let updatedData: any = {};
 
     if (contentType.includes('multipart/form-data')) {
       try {
-        // Use native FormData parsing for App Router
-        const formData = await req.formData();
-
-        // Processing form data
+        const formData = await request.formData();
+        // Process form fields
         for (const [key, value] of formData.entries()) {
           if (key !== 'files') {
-            // Handle nested fields using dot notation (e.g., result.value)
             if (key.includes('.')) {
               const [parent, child] = key.split('.');
               updatedData[parent] = updatedData[parent] || {};
@@ -60,34 +59,30 @@ export async function PUT(
             }
           }
         }
-
         // Process files
         const fileEntries = formData.getAll('files');
         if (fileEntries.length > 0) {
           const savedFiles = [];
-
           for (const fileEntry of fileEntries) {
             if (fileEntry instanceof File) {
               const savedPath = await saveFile(fileEntry);
               if (savedPath) savedFiles.push(savedPath);
             }
           }
-
           if (savedFiles.length > 0) {
             updatedData.result = updatedData.result || {};
             updatedData.result.files = savedFiles;
           }
         }
-        // Format the date properly for Prisma
+        // Format testDate for Prisma
         if (updatedData.testDate && typeof updatedData.testDate === 'string') {
           if (!updatedData.testDate.includes('T')) {
-            // Convert YYYY-MM-DD to YYYY-MM-DDT00:00:00.000Z
             updatedData.testDate = new Date(
               `${updatedData.testDate}T00:00:00.000Z`,
             ).toISOString();
           }
         }
-        // Validate the data
+        // Validate data
         updatedData = diagnosticTestSchema.partial().parse(updatedData);
       } catch (error) {
         logger.error(`Error processing multipart form: ${error}`);
@@ -97,29 +92,25 @@ export async function PUT(
         );
       }
     } else {
-      // Handle JSON requests
-      const body = await req.json();
+      const body = await request.json();
       updatedData = diagnosticTestSchema.partial().parse(body);
     }
 
-    // Handle existing files if needed
+    // Handle existing files if provided
     const existingFilesData = updatedData.existingFiles;
     if (existingFilesData) {
-      // Keep existing files if specified
       delete updatedData.existingFiles;
-
       if (!updatedData.result) updatedData.result = {};
       updatedData.result.files = Array.isArray(existingFilesData)
         ? existingFilesData
         : [existingFilesData];
     }
 
-    // If files are being updated and no existing files specified, remove old ones
+    // Remove old files if new ones are provided
     if (updatedData.result && updatedData.result.files && !existingFilesData) {
       const existingTest = await prisma.diagnosticTest.findUnique({
-        where: { id: params.id },
+        where: { id },
       });
-
       if (
         existingTest?.result &&
         typeof existingTest.result === 'object' &&
@@ -129,7 +120,6 @@ export async function PUT(
         const oldFiles = Array.isArray(existingTest.result.files)
           ? existingTest.result.files
           : [existingTest.result.files];
-
         for (const filePath of oldFiles) {
           if (filePath) {
             const fullPath = path.join(
@@ -147,13 +137,12 @@ export async function PUT(
       }
     }
 
-    // Update the database
     const updatedTest = await prisma.diagnosticTest.update({
-      where: { id: params.id },
+      where: { id },
       data: updatedData,
     });
 
-    logger.info(`Test result ${params.id} updated successfully`);
+    logger.info(`Test result ${id} updated successfully`);
     return NextResponse.json(updatedTest);
   } catch (error) {
     logger.error(`Error updating test result: ${error}`);
@@ -177,19 +166,17 @@ export async function PUT(
 
 // Delete a test result
 export async function DELETE(
-  req: Request,
-  { params }: { params: { id: string } },
-) {
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+): Promise<NextResponse> {
   try {
+    const { id } = await params;
     const test = await prisma.diagnosticTest.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
-
     if (!test) {
       return NextResponse.json({ error: 'Test not found' }, { status: 404 });
     }
-
-    // Remove file(s) from disk if they exist
     if (
       test.result &&
       typeof test.result === 'object' &&
@@ -199,7 +186,6 @@ export async function DELETE(
       const filesToDelete = Array.isArray(test.result.files)
         ? test.result.files
         : [test.result.files];
-
       for (const filePath of filesToDelete) {
         if (filePath) {
           const fullPath = path.join(
@@ -215,12 +201,10 @@ export async function DELETE(
         }
       }
     }
-
     await prisma.diagnosticTest.delete({
-      where: { id: params.id },
+      where: { id },
     });
-
-    logger.info(`Test result ${params.id} deleted successfully`);
+    logger.info(`Test result ${id} deleted successfully`);
     return NextResponse.json(
       { message: 'Test result deleted' },
       { status: 200 },

@@ -3,7 +3,7 @@
 'use client';
 
 import { ExclamationCircleIcon, PlusIcon } from '@heroicons/react/24/outline';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import DeleteConfirmationModal from './components/DeleteConfirmationModal';
 import TestDetailsModal from './components/TestDetailsModal';
 import TestForm, { DiagnosticTest } from './components/TestForm';
@@ -40,7 +40,7 @@ const TestsPage = () => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
 
-  const fetchTests = async () => {
+  const fetchTests = useCallback(async () => {
     try {
       setError(null);
       setLoading(true);
@@ -59,11 +59,11 @@ const TestsPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [error]);
 
   useEffect(() => {
     fetchTests();
-  }, []);
+  }, [fetchTests]);
 
   const confirmDelete = (test: DiagnosticTest) => {
     setDeleteConfirmation({
