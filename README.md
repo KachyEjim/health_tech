@@ -151,32 +151,65 @@ Then open your browser and navigate to http://localhost:3000.
 ## Directory Structure 📂
 
 ```bash
-/diagnostic-test-manager
+.
+├── eslint.config.mjs               # ESLint configuration file for project-wide linting rules.
+├── LICENSE                         # License file (MIT License).
+├── logs
+│   └── app.log                     # Application log file.
+├── next.config.ts                  # Next.js configuration file.
+├── next-env.d.ts                   # Next.js TypeScript environment definitions.
+├── package.json                    # Project metadata, scripts, and dependencies.
+├── package-lock.json               # Auto-generated file for locking dependency versions.
+├── postcss.config.mjs              # PostCSS configuration file for processing CSS.
 ├── prisma
-│   └── schema.prisma         # Prisma schema file
+│   ├── migrations                  # Folder containing Prisma migrations.
+│   │   ├── 20250309135746_starting_new
+│   │   │   └── migration.sql       # SQL file with migration instructions.
+│   │   └── migration_lock.toml    # Prisma migration lock file.
+│   └── schema.prisma               # Prisma schema file defining data models.
+├── public                          # Public assets (served statically).
+│   ├── file.svg                    # Example SVG file.
+│   ├── globe.svg                   # Example SVG file.
+│   ├── next.svg                    # Next.js logo in SVG format.
+│   ├── uploads                     # Folder for uploaded files (e.g., images, documents).
+│   ├── vercel.svg                  # Vercel logo in SVG format.
+│   └── window.svg                  # Example SVG file.
+├── README.md                       # This README file.
+├── scripts
+│   └── db-setup.js                 # Script to initialize or setup the database.
 ├── src
-│   ├── app
-│   │   ├── api
+│   ├── app                         # Main application folder (Next.js App Router).
+│   │   ├── api                     # API route handlers.
+│   │   │   ├── lib
+│   │   │   │   └── prisma.ts       # Prisma client setup for database access.
 │   │   │   ├── tests
-│   │   │   │   └── route.ts  # API endpoints for tests (list/create)
-│   │   │   └── tests
-│   │   │       └── [id]
-│   │   │           └── route.ts  # API endpoints for individual test operations
-│   │   ├── tests
-│   │   │   ├── page.tsx      # Page listing tests
-│   │   │   └── components
-│   │   │       ├── TestForm.tsx   # Form for adding/updating tests
-│   │   │       └── TestsTable.tsx  # Table displaying tests
-│   └── lib
-│       └── prisma.ts         # Prisma client setup
-├── utils
-│   ├── file_operation.ts     # File upload helper functions
-│   ├── logger.ts             # Logger configuration
-│   └── validation.ts         # Zod schemas for request validation
-├── package.json
-├── tsconfig.json
-└── README.md                 # This file!
-```
+│   │   │   │   ├── [id]
+│   │   │   │   │   └── route.ts    # API routes for operations on a specific test (GET, PUT, DELETE).
+│   │   │   │   └── route.ts        # API routes for listing and creating test results.
+│   │   │   └── utils
+│   │       ├── file_operation.ts   # Helper functions for file uploads.
+│   │       ├── logger.ts           # Logger configuration and utility.
+│   │       └── validation.ts       # Zod schemas for validating API request payloads.
+│   │   ├── favicon.ico             # Favicon for the application.
+│   │   ├── globals.css             # Global CSS file (Tailwind and custom styles).
+│   │   ├── layout.tsx              # Application layout component (applies to all pages).
+│   │   ├── page.tsx                # Home page of the application.
+│   │   └── tests                   # Frontend pages for managing tests.
+│   │       ├── components          # React components used in the tests pages.
+│   │       │   ├── DeleteConfirmationModal.tsx   # Modal for confirming deletion of a test.
+│   │       │   ├── FileList.tsx    # Component to display a list of uploaded files.
+│   │       │   ├── TestDetailsModal.tsx  # Modal for displaying test details.
+│   │       │   ├── TestForm.tsx    # Form for creating or updating a test result.
+│   │       │   ├── TestsTable.tsx  # Table component to list all test results.
+│   │       │   ├── ToastContainer.tsx  # Container for toast notifications.
+│   │       │   └── Toast.tsx       # Individual toast message component.
+│   │       ├── page.tsx            # Page listing all diagnostic test results.
+│   │       └── utils
+│   │           ├── dateUtils.ts    # Utility functions for date formatting and parsing.
+│   │           └── fileUtils.ts    # Additional helper functions for file operations.
+├── tailwind.config.js              # Tailwind CSS configuration file.
+└── tsconfig.json                   # TypeScript configuration file.
+
 
 ## Contact 📧
 
@@ -184,3 +217,4 @@ For questions or suggestions, please contact:
 
 Onyedikachi Ejim
 Email: Ejimovc@gmail.com
+```
