@@ -83,10 +83,21 @@ The application is structured around Next.js API routes and pages. Key component
    Create a `.env` file in the root directory and add the following:
 
    ```env
+   DB_USER=health_tech_user
+   DB_NAME=health_tech_db
+   DB_PASSWORD=health_tech_pwd
+   PG_ADMIN=postgres
+
    DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE_NAME"
    ```
 
-4. **Run Prisma Migrations:**
+4. **Setup your PostgreSQL database**
+
+   ```bash
+   npm run db-setup
+   ```
+
+5. **Run Prisma Migrations:**
 
    Generate and run the migrations to set up your PostgreSQL database:
 
@@ -126,8 +137,6 @@ Then open your browser and navigate to http://localhost:3000.
    # or with yarn
    yarn start
    ```
-
-   The production build optimizes your application and serves it with server-side rendering and caching as configured.
 
 ## API Endpoints 🌐
 
@@ -215,6 +224,6 @@ Then open your browser and navigate to http://localhost:3000.
 
 For questions or suggestions, please contact:
 
-Onyedikachi Ejim
+Name: Onyedikachi Ejim
 Email: Ejimovc@gmail.com
 ```

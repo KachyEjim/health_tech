@@ -21,7 +21,7 @@ async function setupDatabase() {
       console.log(`✅ User ${DB_USER} already exists`);
     } catch (error) {
       // If user doesn't exist, We create it
-      console.log(`🔧 Creating user ${DB_USER}...`);
+      console.log(`🔧 Creating user ${DB_USER}...`, error);
       await execPromise(
         `psql -U ${PG_ADMIN} -c "CREATE USER ${DB_USER} WITH PASSWORD '${DB_PASSWORD}' CREATEDB;"`,
       );
@@ -36,7 +36,7 @@ async function setupDatabase() {
       console.log(`✅ Database ${DB_NAME} already exists`);
     } catch (error) {
       // If database doesn't exist, we create it
-      console.log(`🔧 Creating database ${DB_NAME}...`);
+      console.log(`🔧 Creating database ${DB_NAME}...`, error);
       await execPromise(
         `psql -U ${PG_ADMIN} -c "CREATE DATABASE ${DB_NAME} OWNER ${DB_USER};"`,
       );
