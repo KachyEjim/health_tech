@@ -66,7 +66,7 @@ The application is structured around Next.js API routes and pages. Key component
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/diagnostic-test-manager.git
+   git clone https://github.com/KachyEjim/health_tech
    cd diagnostic-test-manager
    ```
 
