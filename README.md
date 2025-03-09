@@ -67,7 +67,7 @@ The application is structured around Next.js API routes and pages. Key component
 
    ```bash
    git clone https://github.com/KachyEjim/health_tech
-   cd diagnostic-test-manager
+   cd health_tech
    ```
 
 2. **Install Dependencies:**
