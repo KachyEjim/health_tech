@@ -67,7 +67,7 @@ const TestForm: React.FC<TestFormProps> = ({
     patientName: '',
     testType: '',
     result: { value: '' },
-    testDate: new Date().toISOString().split('T')[0],
+    testDate: '', // Initialize as empty string
     notes: '',
   });
   const [files, setFiles] = useState<File[]>([]);
@@ -83,9 +83,8 @@ const TestForm: React.FC<TestFormProps> = ({
     if (test) {
       const formattedTest = {
         ...test,
-        testDate:
-          test.testDate?.split('T')[0] ||
-          new Date().toISOString().split('T')[0],
+        // Only use existing date for editing, don't provide default
+        testDate: test.testDate?.split('T')[0] || '',
         result: test.result || { value: '' },
       };
 
@@ -165,6 +164,28 @@ const TestForm: React.FC<TestFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // All validation checks at the beginning
+    if (!formData.testDate) {
+      setError('Please select a test date');
+      return;
+    }
+
+    if (!formData.patientName.trim()) {
+      setError('Please enter a patient name');
+      return;
+    }
+
+    if (formData.testType === 'Other' && !customTestType.trim()) {
+      setError('Please enter a custom test type');
+      return;
+    }
+
+    if (!formData.testType) {
+      setError('Please select a test type');
+      return;
+    }
+
     setIsSubmitting(true);
     setError(null);
 
@@ -175,10 +196,6 @@ const TestForm: React.FC<TestFormProps> = ({
           ? customTestType
           : formData.testType;
 
-      // Add debug logging
-      console.log('Form data before submission:', formData);
-
-      // Simplify the form data construction - this is likely causing the issue
       // Add essential fields individually
       formDataToSend.append('patientName', formData.patientName);
       formDataToSend.append('testType', finalTestType);
@@ -210,11 +227,6 @@ const TestForm: React.FC<TestFormProps> = ({
       const method = test ? 'PUT' : 'POST';
       const url = test ? `/api/tests/${test.id}` : '/api/tests';
 
-      // Log what we're sending to the server
-      console.log('Submitting with method:', method);
-      console.log('To URL:', url);
-      console.log('Form data keys being sent:', [...formDataToSend.keys()]);
-
       const res = await fetch(url, {
         method,
         body: formDataToSend,
@@ -222,7 +234,6 @@ const TestForm: React.FC<TestFormProps> = ({
 
       // Get the response text first for debugging
       const responseText = await res.text();
-      console.log('Server response:', responseText);
 
       // Then parse it as JSON if possible
       let errorData;
@@ -241,10 +252,8 @@ const TestForm: React.FC<TestFormProps> = ({
           const errorMessages = errorData.error
             .map((err: { message: string }) => err.message)
             .join('\n');
-          console.log('Validation errors:', errorMessages);
           throw new Error(errorMessages);
         } else if (errorData && errorData.error) {
-          console.log('Server error:', errorData.error);
           throw new Error(errorData.error);
         } else {
           throw new Error(`Failed with status: ${res.status}`);
@@ -252,7 +261,6 @@ const TestForm: React.FC<TestFormProps> = ({
       }
 
       // If we get here, the submission was successful
-      console.log('Form submitted successfully!');
       if (onSubmitSuccess) {
         onSubmitSuccess();
       } else {
@@ -424,7 +432,6 @@ const TestForm: React.FC<TestFormProps> = ({
                     value={formData.testDate}
                     onChange={handleChange}
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 focus:outline-none transition-colors"
-                    placeholder="YYYY-MM-DD"
                     required
                     title="Please select the date when the test was performed"
                     aria-label="Test Date"
