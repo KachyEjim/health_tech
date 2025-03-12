@@ -784,3 +784,5 @@ Argument `where` of type DiagnosticTestWhereUniqueInput needs at least one of `i
 2025-03-11T22:03:32.246Z [info]: Test result 991aab41-f98f-4313-9d90-df921f2bf22e deleted successfully
 2025-03-12T08:32:14.139Z [error]: Error deleting file /home/kachy/projects/health_tech/public/uploads/1741547111892-Screenshot_from_2025-02-25_16-05-36.png: Error: ENOENT: no such file or directory, unlink '/home/kachy/projects/health_tech/public/uploads/1741547111892-Screenshot_from_2025-02-25_16-05-36.png'
 2025-03-12T08:32:14.151Z [info]: Test result 5ba3a3ca-5cbb-44ce-a384-d949bd877ad0 deleted successfully
+2025-03-12T11:05:04.974Z [info]: Ping service started
+2025-03-12T11:05:09.045Z [info]: Ping service started

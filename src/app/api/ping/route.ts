@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
   if (!isKeepAlive) {
     logger.info('Ping endpoint accessed manually');
   }
-
+  console.log('Server pinged at   ', new Date().toISOString());
   return NextResponse.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
